@@ -35,7 +35,7 @@ cpan -i CPAN
 cpan -i Module::Install Digest::MD5 XML::Simple Net::IP Proc::Daemon Proc::PID::File nvidia::ml Compress::Zlib Crypt::SSLeay LWP::Protocol::https Net::CUPS Net::SNMP Net::Netmask Net::Ping Nmap::Parser Data::UUID Parse::EDID
 
 #extracting  ocs package 
-tar -xvf Ocsinventory-Unix-Agent-2.4.2.tar
+tar -xvf Ocsinventory-Unix-Agent-2.4.2.tar.gz
 
 #changing path for installation 
 
@@ -54,7 +54,6 @@ apt-get -f install -y
 
 apt install php-pclzip make build-essential libdbd-mysql-perl libnet-ip-perl libxml-simple-perl php php-mbstring php-soap php-mysql php-curl php-xml php-zip
 
-cd /Ocsinventory-Unix-Agent-2.4.2
 
 make install
 
