@@ -4,13 +4,14 @@
 #author :amit rikhari
 
  
- 
+ #to get configuration files  
 wget https://raw.githubusercontent.com/amitrikhari/pangps/main/CaCert.pem
 
 wget  https://github.com/OCSInventory-NG/UnixAgent/releases/download/v2.4.2/Ocsinventory-Unix-Agent-2.4.2.tar.gz
  
 wget https://raw.githubusercontent.com/amitrikhari/pangps/main/ocsinventory-agent.cfg
 
+#make system ready for ocs installation 
 apt update
 
 apt upgrade -y
@@ -33,11 +34,14 @@ cpan -i CPAN
 
 cpan -i Module::Install Digest::MD5 XML::Simple Net::IP Proc::Daemon Proc::PID::File nvidia::ml Compress::Zlib Crypt::SSLeay LWP::Protocol::https Net::CUPS Net::SNMP Net::Netmask Net::Ping Nmap::Parser Data::UUID Parse::EDID
 
+#extracting  ocs package 
 tar -xvf Ocsinventory-Unix-Agent-2.4.2.tar
+
+#changing path for installation 
 
  cd Ocsinventory-Unix-Agent-2.4.2/
 
-
+#starting configuration 
  perl Makefile.PL
 
  apt-get install make -y
@@ -54,6 +58,7 @@ cd /Ocsinventory-Unix-Agent-2.4.2
 
 make install
 
+#coping predefned configured files
 cp -f /opt/ocsinventory-agent.cfg  /etc/ocsinventory/ocsinventory-agent.cfg
 
 
